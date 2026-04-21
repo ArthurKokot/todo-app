@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todoList</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List</h1>
+
+      <div class="add-task">
+        <input type="text" placeholder="Add new task..." data-task-input />
+        <button data-add-btn>Add</button>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Search task..." data-search-input />
+      </div>
+
+      <div class="task-info">
+        <div id="counters" class="counters">
+          <span>All: <span data-all-count>0</span></span>
+          <span>Completed: <span data-completed-count>0</span></span>
+          <span>Active: <span data-active-count>0</span></span>
+        </div>
+
+        <button data-clear-btn>Clear All</button>
+      </div>
+
+      <ul class="task-list" data-task-list></ul>
+    </div>
+
+    <template data-task-template>
+      <li class="task">
+        <div class="task-left">
+          <input data-task-checkbox class="checkbox" type="checkbox" />
+          <span data-task-text class="task-text">Learn HTML</span>
+        </div>
+        <button type="button" data-delete-btn class="delete-btn">✕</button>
+      </li>
+    </template>
+
+    <script type="module" src="./JS/app.js"></script>
+  </body>
+</html>

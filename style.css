@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* GLOBAL SMOOTH TRANSITIONS */
+    transition: background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        opacity 0.25s ease;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 650;
+
+    font-family: ui-sans-serif, system-ui, -apple-system, "Inter",
+        "Segoe UI", Roboto, Arial, sans-serif;
+
+    letter-spacing: -0.6px;
+    color: #0f0f10;
+}
+
+/* ADD TASK */
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+[data-task-input] {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f5f5f5;
+    outline: none;
+}
+
+[data-task-input]:focus {
+    background: #fff;
+    border-color: #ccc;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* BUTTON */
+[data-add-btn] {
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: transform 0.15s ease, background 0.25s ease;
+}
+
+[data-add-btn]:hover {
+    background: #444;
+    transform: translateY(-1px);
+}
+
+[data-add-btn]:active {
+    transform: scale(0.96);
+}
+
+/* SEARCH */
+.search {
+    margin-bottom: 20px;
+}
+
+[data-search-input] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+[data-search-input]:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* COUNTERS */
+.task-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.counters span {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.counters span span {
+    font-weight: 700;
+    color: #111;
+}
+
+/* CLEAR BTN */
+[data-clear-btn] {
+    border: none;
+    background: transparent;
+    color: #ff4d4d;
+    cursor: pointer;
+
+    padding: 6px 10px;
+    border-radius: 8px;
+
+    transition: transform 0.15s ease, background 0.25s ease, color 0.25s ease;
+}
+
+/* HOVER STATE */
+[data-clear-btn]:hover {
+    background: #ff4d4d;
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+/* ACTIVE */
+[data-clear-btn]:active {
+    transform: scale(0.96) translateY(0px);
+}
+
+/* LIST */
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-list p {
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+}
+
+
+/* TASK ITEM */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 16px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #fff;
+
+    transition: background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.task:hover {
+    background: #fafafa;
+    border-color: #ddd;
+    transform: translateY(-1px);
+}
+
+/* LEFT SIDE */
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+
+    position: relative;
+    background: #fff;
+}
+
+/* HOVER */
+.checkbox:hover {
+    border-color: #bbb;
+    transform: scale(1.05);
+}
+
+/* CHECKED STATE */
+.checkbox:checked {
+    background: #222;
+    border-color: #222;
+}
+
+/* CHECK ICON */
+.checkbox:checked::after {
+    content: "✓";
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+}
+.task-text {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/* COMPLETED */
+.task.completed .task-text {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+/* DELETE BTN */
+.delete-btn {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.15s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.delete-btn:hover {
+    background: #ff4d4d;
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+.delete-btn:active {
+    transform: scale(0.95) translateY(0px);
+}
